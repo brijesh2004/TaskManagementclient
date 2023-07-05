@@ -1,0 +1,31 @@
+.tasklist{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.task_details{
+    width: 300px;
+    margin: 20px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 0 20px;
+}
+.about_task{
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.status{
+    background-color: yellow;
+}
+
+.changebtn1{
+    width: 100px;
+    margin: 10px;
+    height: 35px;
+    background-color: rgb(148, 247, 0);
+    border-radius: 20px;
+}
+.changebtn1:hover{
+    background-color: rgb(228, 244, 206);
+}
