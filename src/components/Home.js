@@ -11,7 +11,7 @@ const Home = () => {
   const [userdes, setUserDes] = useState("");
   const findData = async () => {
     try {
-      const res = await fetch("http://localhost:7000/findtheuserdata", {
+      const res = await fetch("https://task-management-system-server.onrender.com/findtheuserdata", {
         method: "GET",
         headers: {
           Accept: "application/json",
@@ -37,11 +37,11 @@ const Home = () => {
 
   const changeTheTask = async (e) =>{
     e.preventDefault();
-    const res = await fetch(`http://localhost:7000/api/change/${taskid}`,{
+    const res = await fetch(`https://task-management-system-server.onrender.com/api/change/${taskid}`,{
       method:'POST',
       credentials:'include',
       headers:{
-        "Origin":['http://localhost:7000'],
+        "Origin":['https://task-management-system-server.onrender.com'],
         "Content-Type":"application/json"
       },
       body:JSON.stringify({
@@ -80,11 +80,11 @@ const Home = () => {
                 <div>
                   <p className='status'><span className='about_task'>Status</span> - Completed</p>
                   <button onClick={async () => {
-                  const res = await fetch(`http://localhost:7000/api/edit/${elem._id}`, {
+                  const res = await fetch(`https://task-management-system-server.onrender.com/api/edit/${elem._id}`, {
                   method: 'POST',
                   credentials: 'include',
                   headers: {
-                    "Origin": ["http://localhost:7000"],
+                    "Origin": ["https://task-management-system-server.onrender.com"],
                     "Content-Type": "application/json"
                   },
                   body: JSON.stringify({
@@ -104,11 +104,11 @@ const Home = () => {
                 // navigate('/addtask')
                   }} className='changebtn1'>Edit</button>
                   <button onClick={async ()=>{
-                    const res = await fetch(`http://localhost:7000/api/delete/${elem._id}`,{
+                    const res = await fetch(`https://task-management-system-server.onrender.com/api/delete/${elem._id}`,{
                       method:'DELETE',
                       credentials:"include",
                       headers:{
-                        "Origin":['http://localhost:7000'],
+                        "Origin":['https://task-management-system-server.onrender.com'],
                         "Content-Type":"application/json"
                       }
                     })
@@ -128,11 +128,11 @@ const Home = () => {
               <p><span className='about_task'> task Description</span> -{elem.taskdes}</p>
               <p>Change status on clicking the below button</p>
               <button onClick={async () => {
-                const res = await fetch(`http://localhost:7000/api/model/${elem._id}`, {
+                const res = await fetch(`https://task-management-system-server.onrender.com/api/model/${elem._id}`, {
                   method: 'POST',
                   credentials: 'include',
                   headers: {
-                    "Origin": ["http://localhost:7000"],
+                    "Origin": ["https://task-management-system-server.onrender.com"],
                     "Content-Type": "application/json"
                   },
                   body: JSON.stringify({

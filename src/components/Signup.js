@@ -18,7 +18,7 @@ const Signup = () => {
         e.preventDefault();
         const {name,email,password,confirmpassword} = user;
 
-        const res = await fetch("http://localhost:7000/register",{
+        const res = await fetch("https://task-management-system-server.onrender.com/register",{
             method:'POST',
             headers:{
                 "Content-Type":"application/json"
@@ -45,8 +45,8 @@ const Signup = () => {
       <h2>Register</h2>
         <input type="text" placeholder='Enter Your Name' name='name' value={user.name} onChange={handleinputs}/> <br />
         <input type="email" placeholder='Enter Your Email' name='email' value={user.email} onChange={handleinputs}/><br />
-        <input type="text" placeholder='Create Strong Password' name='password' value={user.password} onChange={handleinputs}/><br />
-        <input type="text" placeholder='Enter Password Again' name='confirmpassword' value={user.confirmpassword} onChange={handleinputs}/><br />
+        <input type="password" placeholder='Create Strong Password' name='password' value={user.password} onChange={handleinputs}/><br />
+        <input type="password" placeholder='Enter Password Again' name='confirmpassword' value={user.confirmpassword} onChange={handleinputs}/><br />
         <button onClick={postData}>Sign Up</button>
       </div>
       </div>

@@ -16,11 +16,11 @@ const Addtask = () => {
     const Addthetask =async (e) =>{
         e.preventDefault();
         const {taskname ,taskdes}=user;
-        const res = await fetch("http://localhost:7000/addtask",{
+        const res = await fetch("https://task-management-system-server.onrender.com/addtask",{
             method:'POST',
             credentials:'include',
             headers:{
-              'Origin':`http://localhost:7000`,
+              'Origin':`https://task-management-system-server.onrender.com`,
               "Content-Type":"application/json"
             },
             body:JSON.stringify({
