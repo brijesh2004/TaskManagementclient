@@ -1,0 +1,16 @@
+.bigbox{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.box{
+    width: 300px;
+    height: 100px;
+    text-align: center;
+    box-shadow: 0 0 20px;
+    border-radius: 20px;
+    margin: 10px;
+}
+.box h3{
+    margin-top: 32px;
+}

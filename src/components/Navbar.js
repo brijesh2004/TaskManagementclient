@@ -19,6 +19,9 @@ const Navbar = () => {
           <Link className="nav-link  text-white" to="/addtask">Add Task</Link>
         </li>
         <li className="nav-item">
+          <Link className="nav-link  text-white" to="/dashboard">Dashboard</Link>
+        </li>
+        <li className="nav-item">
           <Link className="nav-link  text-white" to="/register">Signup</Link>
         </li>
         <li className="nav-item">

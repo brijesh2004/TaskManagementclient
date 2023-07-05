@@ -6,6 +6,7 @@ import Home from './components/Home';
 import Signup from './components/Signup';
 import Login from './components/Login';
 import Addtask from './components/Addtask';
+import Dashboard from './components/Dashboard';
 
 
 function App() {
@@ -16,7 +17,7 @@ function App() {
       <Routes>
         <Route exact path='/'  element={<Home/>}></Route>
         <Route exact path='/addtask'  element={<Addtask/>}></Route>
-        
+        <Route exact path='/dashboard'  element={<Dashboard/>}></Route>
         <Route exact path='/register' element={<Signup/>}></Route>
         <Route exact path='/login' element={<Login/>}></Route>
       </Routes>
