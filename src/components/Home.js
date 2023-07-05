@@ -1,16 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../style/Home.css';
+import Loading from './Loading';
 
 const Home = () => {
   const navigate = useNavigate();
   const [userData, setUserData] = useState({});
   const [isEdit, setIsEdit] = useState(false);
   const [taskid, setTaskid] = useState({});
+  const [isloaded , setIsloaded] = useState(false);
   const [username, setUserTask] = useState("");
   const [userdes, setUserDes] = useState("");
   const findData = async () => {
     try {
+      setIsloaded(true);
       const res = await fetch("https://task-management-system-server.onrender.com/findtheuserdata", {
         method: "GET",
         headers: {
@@ -22,6 +25,7 @@ const Home = () => {
       const data = await res.json();
       // console.log(data);
       setUserData(data);
+      setIsloaded(false);
       if (res.status === 400 || !data || res.status === 401) {
         const error = new Error(res.error);
         throw error;
@@ -64,6 +68,7 @@ const Home = () => {
   return (
     <>
      <center><h1>Hi {userData.name}</h1></center> 
+     {isloaded&&<Loading/>}
       {!isEdit &&
         <div className="tasklist">
           {Array.isArray(userData.tasks) && userData.tasks.map((elem, index) => (

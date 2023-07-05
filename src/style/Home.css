@@ -29,3 +29,6 @@
 .changebtn1:hover{
     background-color: rgb(228, 244, 206);
 }
+.loading{
+    text-align: center;
+}
